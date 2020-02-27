@@ -82,6 +82,11 @@ namespace EPocalipse.Json.Viewer
                 obj.JsonType = JsonType.Array;
             else if (jsonObject is JavaScriptObject)
                 obj.JsonType = JsonType.Object;
+            else if  (jsonObject == null)
+            {
+                obj.JsonType = JsonType.Value;
+                obj.Value = null;
+            }
             else
             {
             	if (typeof(string) == jsonObject.GetType()) {
